@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clinique dentaire Le Réconfort</title>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+  }
+
+  /* ------------------ NAV + LOGO ------------------ */
+.nav-wrapper {
+  background: white;               /* inverted background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6vw 2vw;              /* increased height */
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 2vw;
+  height: 3.5vw;
+  min-height: 40px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 2.4vw;
+  white-space: nowrap;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #B32BA7;                 
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  color: #7d1f79;                  
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .top-nav a { font-size: 2.8vw; }
+  .logo { height: 7vw; }
+  .nav-wrapper { padding: 3vw 2vw; }
+}
+
+@media (max-width: 500px) {
+  .top-nav a { font-size: 3.6vw; }
+  .logo { height: 10vw; }
+  .nav-wrapper { padding: 4vw 2vw; }
+}
+
+
+  /* ------------------------------------------------ */
+  /* HERO SECTION — FIX FOR NO ZOOMING */
+  /* ------------------------------------------------ */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url("https://allarassemjonathan.github.io/reconfort_background_better.png")
+      center top / contain no-repeat;
+    background-color: white; /* fills empty space */
+    overflow: hidden;
+  }
+
+  .hero-text {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28vw;
+    min-width: 250px;
+    background: rgba(225, 225, 225, 0.649);
+    padding: 1.5vw 2vw;
+    border-radius: 6px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2vw;
+    margin: 0 0 1vw 0;
+  }
+
+  .hero-text p { font-size: 1.1vw; }
+
+  .call-btn {
+    margin-top: 1.2vw;
+    background: #912688;
+    color: white;
+    padding: 0.8vw 1.5vw;
+    font-size: 1vw;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* SMALL SCREENS */
+  @media (max-width: 900px) {
+    .hero { height: 60vh; }
+    .hero-text { width: 42vw; }
+    .hero-text h1 { font-size: 3.8vw; }
+    .hero-text p  { font-size: 2.3vw; }
+    .call-btn     { font-size: 2.2vw; padding: 1.2vw 2.5vw; }
+
+    .top-nav a { font-size: 2.8vw; }
+    .logo { height: 7vw; }
+  }
+
+  @media (max-width: 500px) {
+    .hero { height: 50vh; }
+    .hero-text { width: 55vw; }
+    .hero-text h1 { font-size: 4.5vw; }
+    .hero-text p  { font-size: 3vw; }
+    .call-btn     { font-size: 3vw; padding: 1.8vw 3vw; }
+
+    .top-nav a { font-size: 3.6vw; }
+    .logo { height: 10vw; }
+  }
+
+
+/* ------------------ LOCALISATION SECTION ------------------ */
+
+.localisation {
+  padding: 4vw 2vw;
+  background: #ffffff;
+  text-align: center;
+}
+
+.localisation h2 {
+  font-size: 2.8vw;
+  color: #B32BA7;
+  margin-bottom: 2vw;
+  font-weight: bold;
+}
+
+.map-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.map-container iframe {
+  width: 80%;
+  height: 55vh;
+  border-radius: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .localisation h2 { font-size: 5vw; }
+  .map-container iframe { width: 95%; height: 40vh; }
+}
+
+@media (max-width: 500px) {
+  .localisation h2 { font-size: 6vw; }
+  .map-container iframe { width: 100%; height: 38vh; }
+}
+
+/* ------------------ CONTACT SECTION ------------------ */
+
+.contact {
+  padding: 4vw 2vw;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.6vw;
+  color: #B32BA7;
+  margin-bottom: 2vw;
+  font-weight: bold;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5vw;
+  width: 80%;
+  margin: auto;
+}
+
+.contact-item {
+  background: white;
+  padding: 1.8vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.contact-item h3 {
+  color: #912688;
+  margin-bottom: 0.8vw;
+}
+
+.contact-item a {
+  color: #B32BA7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-item.full {
+  grid-column: span 2;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+  .contact h2 { font-size: 5.2vw; }
+}
+
+/* ------------------ INTERIOR SECTION ------------------ */
+
+.interior {
+  padding: 4vw 2vw;
+  text-align: center;
+  background: #ffffff;
+}
+
+.interior h2 {
+  font-size: 2.8vw;
+  color: #B32BA7;
+  margin-bottom: 2vw;
+  font-weight: bold;
+}
+
+.interior-img-container {
+  width: 80%;
+  margin: auto;
+}
+
+.interior-img-container img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.interior-desc {
+  width: 30%;
+  margin: 2vw auto 0 auto;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .interior h2 { font-size: 5vw; }
+  .interior-img-container { width: 95%; }
+  .interior-desc { width: 90%; font-size: 2.8vw; }
+}
+
+@media (max-width: 500px) {
+  .interior h2 { font-size: 6vw; }
+  .interior-desc { font-size: 3.4vw; }
+}
+
+@media (max-width: 900px) {
+  #contact form {
+    width: 90% !important;
+  }
+
+  #contact button {
+    font-size: 3vw !important;
+    padding: 2vw 4vw !important;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav-wrapper">
+  <img class="logo" src="https://allarassemjonathan.github.io/logo_reconfort.png" alt="Logo" />
+  
+<div class="top-nav">
+  <a href="#home">Home</a>
+  <a href="#localisation">Localisation</a>
+  <a href="#info">Information</a>
+  <a href="#contact">Contact</a>
+  <a href="#interior">Interieur</a>
+</div>
+</div>
+
+<div id="home" class="hero">
+  <div class="hero-text">
+    <h1>24/7 Soins dentaires<br> Zac Nguinth — derrière la mairie<br>& Rendez-vous non necessaire</h1>
+
+    <p>
+      Qu’il s’agisse d’une douleur soudaine, d’une dent cassée ou de tout autre problème urgent,
+      notre équipe dévouée propose une prise en charge le jour même et accueille les patients sans rendez-vous.
+    </p>
+
+    <button class="call-btn">Call Now – (703) 953-3307</button>
+  </div>
+</div>
+
+<section id="localisation" class="localisation">
+  <h2>Localisation</h2>
+  <p>Retrouvez-nous sur place a l'addresse ci-dessous!</p>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38f56.9680672675486!2d-16.92797559999996!3d14.827050200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1bf0036c13fd7%3A0x605567ea694a2917!2sClinique%20dentaire%20LE%20R%C3%89CONFORT!5e0!3m2!1sen!2sus!4v1764767135271!5m2!1sen!2sus"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<section id="interior" class="interior">
+  <h2>À l’intérieur de la clinique</h2>
+
+  <div class="interior-img-container">
+    <img src="https://allarassemjonathan.github.io/reconfort_room.jpg" alt="Intérieur de la clinique">
+  </div>
+
+  <p class="interior-desc">
+    <br>
+    Grâce à une synergie harmonieuse entre expertise, confort et une vision centrée sur 
+    l’expérience patient, notre clinique offre un environnement où chaque détail semble 
+    témoigner d’un engagement profond envers le bien-être.  
+    L’atmosphère, pensée pour allier douceur et modernité, crée une sensation unique 
+    d’accueil enveloppant — un espace où la précision rencontre la tranquillité, et où 
+    chaque intervention s’inscrit dans une dynamique presque intuitive de qualité globale.  
+    Une expérience tellement fluide qu’on en oublierait presque qu’il s’agit d’un cabinet 
+    dentaire.
+  </p>
+</section>
+
+<section id="info" class="contact">
+  <h2>Informations</h2>
+
+  <div class="contact-grid">
+
+    <div class="contact-item">
+      <h3>Adresse</h3>
+      <p>
+        Zac Nguinth derrière la mairie,<br>
+        Thiès, Sénégal
+      </p>
+    </div>
+
+    <div class="contact-item">
+      <h3>Téléphone</h3>
+      <p><a href="tel:+221778104949">+221 77 810 49 49</a></p>
+    </div>
+
+    <div class="contact-item">
+      <h3>Email</h3>
+      <p><a href="mailto:cliniquedentairelereconfort@gmail.com">
+        cliniquedentairelereconfort@gmail.com
+      </a></p>
+    </div>
+
+    <div class="contact-item">
+      <h3>Instagram</h3>
+      <p>
+        <a target="_blank" href="https://www.instagram.com/CliniquedentaireLE%20R%C3%89CONFORT%20">
+          Voir la page Instagram
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-item full">
+      <h3>Horaires</h3>
+      <p>Lundi – Vendredi : 8h30 – 18h00</p>
+      <p>Samedi : 9h00 – 14h00</p>
+      <p>Dimanche : <strong>Fermé</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact" style="background:#ffffff;">
+  <h2>Contactez-nous</h2>
+
+  <p style="margin-bottom:2vw;">
+    Pour toute question ou message, remplissez simplement le formulaire ci-dessous.
+  </p>
+
+  <form 
+    action="https://formspree.io/f/yourFormspreeID"
+    method="POST"
+    style="
+      width:60%;
+      margin:auto;
+      background:#f9f9f9;
+      padding:2vw;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      text-align:left;
+    "
+  >
+
+    <label style="font-weight:bold; color:#912688;">Nom complet</label>
+    <input 
+      type="text" 
+      name="name" 
+      required 
+      style="width:100%; padding:1vw; margin:0.5vw 0 1.5vw 0; border-radius:6px; border:1px solid #ccc;"
+    />
+
+    <label style="font-weight:bold; color:#912688;">Email</label>
+    <input 
+      type="email" 
+      name="email" 
+      required 
+      style="width:100%; padding:1vw; margin:0.5vw 0 1.5vw 0; border-radius:6px; border:1px solid #ccc;"
+    />
+
+    <label style="font-weight:bold; color:#912688;">Message</label>
+    <textarea 
+      name="message" 
+      rows="6" 
+      required
+      style="width:100%; padding:1vw; margin:0.5vw 0 1.5vw 0; border-radius:6px; border:1px solid #ccc;"
+    ></textarea>
+
+    <button 
+      type="submit"
+      style="
+        background:#912688;
+        color:white;
+        padding:1vw 2vw;
+        border:none;
+        border-radius:8px;
+        font-size:1.2vw;
+        font-weight:bold;
+        cursor:pointer;
+      "
+    >
+      Envoyer le message
+    </button>
+
+  </form>
+
+</section>
+
+
+</body>
+</html>
